@@ -9,7 +9,7 @@ class UnansweredQuestions extends Component {
         <h4
           style={{
             textAlign: "center",
-            color: "cyan",
+            color: "#ed4337",
             fontFamily: "Century Gothic,Lucida Sans",
           }}
         >

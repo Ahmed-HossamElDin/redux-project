@@ -9,7 +9,7 @@ class AnsweredQuestions extends Component {
         <h4
           style={{
             textAlign: "center",
-            color: "#1E90FF",
+            color: "#1e90ff",
             fontFamily: "Century Gothic,Lucida Sans",
           }}
         >

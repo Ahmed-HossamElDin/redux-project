@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Card, Image } from "react-bootstrap";
 import { connect } from "react-redux";
-import NavBar from "./NavBar";
-import UnvotedOption from "./UnvotedOption";
-import VotedOption from "./VotedOption";
-import NotFound from "./NotFound";
+import Navigationbar from "../components/Navigationbar";
+import UnvotedOption from "../components/UnvotedOption";
+import VotedOption from "../components/VotedOption";
+import NotFound from "../components/NotFound";
 class QuestionPage extends Component {
   componentWillReceiveProps() {
     this.setState({});
@@ -12,7 +12,7 @@ class QuestionPage extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <Navigationbar />
         {this.props.user ? (
           <div
             style={{
