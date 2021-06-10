@@ -1,30 +1,5 @@
-import React from 'react';
-import {Card, Button, Form, Dropdown, Image} from 'react-bootstrap';
-import {handleSetAuthedUser} from '../actions/authedUser'
-import {handleReceiveUsers} from '../actions/users' 
-import { connect } from "react-redux";
-
-
-
-class LoginCard extends React.Component {
-  state = { name: "", id: "" };
-  changeValue(text, id) {
-    this.setState({ name: text, id: id });
-  }
-  componentDidMount() {
-    document.title = "Login";
-    this.props.dispatch(handleReceiveUsers());
-  }
-    render(){
-        return(
-            <Card className="mx-auto mt-5" style={{ width: '18rem' }} size = "lg">
-            <Card.Body>
-              <Card.Title>Login</Card.Title>
-              <Card.Text>
-                Select user to continue
-              </Card.Text>
-              <Form>
-                  <Form.Group controlId="loginForm">
+<Form>
+                  <Form.Group controlId="formBasicPassword">
                     <Dropdown>
                       <Dropdown.Toggle variant="light" block>
                         {this.state.name ? this.state.name : "Login in As"}
@@ -62,29 +37,3 @@ class LoginCard extends React.Component {
                       </Dropdown.Menu>
                     </Dropdown>
                   </Form.Group>{" "}
-                  <Button
-                    size="lg"
-                    variant="primary"
-                    type="submit"
-                    disabled={this.state.name === ""}
-                    onClick={() => {
-                      this.props.dispatch(handleSetAuthedUser(this.state.id));
-                    }}
-                    block
-                  >
-                    Login
-                  </Button>
-                </Form>
-            </Card.Body>
-          </Card>
-        );
-    }
-}
-
-function mapStateToProps({ users }) {
-  return {
-    users,
-  };
-}
-
-export default connect(mapStateToProps)(LoginCard);
