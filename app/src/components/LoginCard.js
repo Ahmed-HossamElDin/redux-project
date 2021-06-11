@@ -1,9 +1,9 @@
-import React from 'react';
-import {Card, Button, Form, Dropdown, Image} from 'react-bootstrap';
+import React from 'react'
+import Navigationbar from './Navigationbar'
+import {Card, Button, Form, Dropdown, Image} from 'react-bootstrap'
 import {handleSetAuthedUser} from '../actions/authedUser'
 import {handleReceiveUsers} from '../actions/users' 
-import { connect } from "react-redux";
-
+import { connect } from "react-redux"
 
 
 class LoginCard extends React.Component {
@@ -17,6 +17,7 @@ class LoginCard extends React.Component {
   }
     render(){
         return(
+            
             <Card className="mx-auto mt-5" style={{ width: '18rem' }} size = "lg">
             <Card.Body>
               <Card.Title>Login</Card.Title>

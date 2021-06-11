@@ -1,6 +1,7 @@
-import React from 'react';
-import LoginCard from '../components/LoginCard.js';
+import React from 'react'
+import LoginCard from '../components/LoginCard.js'
 import {LoadingBar} from 'react-redux-loading'
+import Navigationbar from '../components/Navigationbar'
 
 class Login extends React.Component{
     render(){
