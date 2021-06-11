@@ -132,36 +132,14 @@ class QuestionPage extends Component {
                   <div>
                     <UnvotedOption
                       text={this.props.QInfo.optionTwo.text}
-                      precentage={
-                        (this.props.QInfo.optionTwo.votes.length /
-                          (this.props.QInfo.optionOne.votes.length +
-                            this.props.QInfo.optionTwo.votes.length)) *
-                        100
-                      }
                       authedUser={this.props.authedUser}
-                      current={this.props.QInfo.optionTwo.votes.length}
-                      total={
-                        this.props.QInfo.optionOne.votes.length +
-                        this.props.QInfo.optionTwo.votes.length
-                      }
                       id={this.props.QInfo.id}
                       option={"optionTwo"}
                       question={this.props.QInfo}
                     />
                     <UnvotedOption
                       text={this.props.QInfo.optionOne.text}
-                      precentage={
-                        (this.props.QInfo.optionOne.votes.length /
-                          (this.props.QInfo.optionOne.votes.length +
-                            this.props.QInfo.optionTwo.votes.length)) *
-                        100
-                      }
                       authedUser={this.props.authedUser}
-                      current={this.props.QInfo.optionOne.votes.length}
-                      total={
-                        this.props.QInfo.optionOne.votes.length +
-                        this.props.QInfo.optionTwo.votes.length
-                      }
                       id={this.props.QInfo.id}
                       option={"optionOne"}
                       question={this.props.QInfo}

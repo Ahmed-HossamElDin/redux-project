@@ -10,7 +10,10 @@ class Login extends React.Component{
                 {this.props.Loading ? (
                 <LoadingBar style={{ backgroundColor: "blue" }} />
                 ) : (
-                    <LoginCard/>
+                    <div>
+                        <Navigationbar/>
+                        <LoginCard/>
+                    </div>
                 )}{" "}
             </div>
             

@@ -5,7 +5,6 @@ import HomePage from "./views/HomePage"
 import QuestionPage from "./views/QuestionPage"
 import LeaderBoard from "./views/LeaderBoard"
 import NewQuestion from "./views/NewQuestion"
-import Navigationbar from './components/Navigationbar'
 import { connect } from "react-redux"
 import { handleReceiveUsers } from "./actions/users"
 import { handleReceiveQuestions } from "./actions/questions"
@@ -20,7 +19,9 @@ class App extends Component {
     return (
       <Fragment>
         {!this.props.authedUser ? (
-            <Login />
+            <Router>
+              <Login />
+            </Router>
         ) : (
           <Router>
             <div>

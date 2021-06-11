@@ -1,5 +1,4 @@
 import React from 'react'
-import Navigationbar from './Navigationbar'
 import {Card, Button, Form, Dropdown, Image} from 'react-bootstrap'
 import {handleSetAuthedUser} from '../actions/authedUser'
 import {handleReceiveUsers} from '../actions/users' 

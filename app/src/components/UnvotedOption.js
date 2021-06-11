@@ -8,7 +8,7 @@ class UnvotedOption extends Component {
     toHome: false,
   };
   render() {
-    if (this.state.toHome === true) return <Redirect to="/" />;
+    if (this.state.toHome === true) return <Redirect to="/"/>;
     return (
       <div style={{ cursor: "pointer", paddingLeft: "31%" }}>
         <Card
@@ -46,6 +46,7 @@ class UnvotedOption extends Component {
             {" "}
             <Card.Title>{this.props.text}</Card.Title>
             <Card.Title>
+              {this.props.total != null &&
               <ProgressBar
                 now={
                   this.props.precentage ? Math.round(this.props.precentage) : 0
@@ -55,10 +56,12 @@ class UnvotedOption extends Component {
                     ? `${Math.round(this.props.precentage)}%`
                     : 0
                 }
-              />{" "}
+              />}{" "}
+              {this.props.total != null &&
               <h6 style={{ paddingTop: "2%", textAlign: "center" }}>
-                {this.props.current} of {this.props.total} votes
+                 {this.props.current} of {this.props.total} votes
               </h6>
+              }
             </Card.Title>
           </Card.Body>
         </Card>
@@ -66,9 +69,10 @@ class UnvotedOption extends Component {
     );
   }
 }
-function mapStateToProps({ questions }) {
+function mapStateToProps({ questions }, {id}) {
   return {
     questions,
+    QInfo: id ? questions[id] : null
   };
 }
 export default connect(mapStateToProps)(UnvotedOption);
